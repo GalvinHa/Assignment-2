@@ -1,6 +1,8 @@
 #include "LinkedBagDS/LinkedBag.h"
 // TO DO include necessary libraries
 #include "EventTicket340.cpp"
+#include<string>
+#include"organizer.h"
  
 
 // This class only contains a single organizer
