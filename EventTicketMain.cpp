@@ -41,7 +41,8 @@ void displayOrganizerMenu(Organizer& organizer){
 				break;
 			}
 			case 2: {
-				// TO DO: ask for new password and update organizer's password
+				// TO DO: ask for new password and update organizer's password|
+				cin.ignore();
 				string newPassword;
                 cout << "Enter new password: ";
                 getline(cin, newPassword);
