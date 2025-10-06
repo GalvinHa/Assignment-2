@@ -20,7 +20,7 @@ using namespace std;
 void displayOrganizerMenu(Organizer& organizer){
 	int organizerChoice = 0;
 	do {
-		cout << "\n Hi, "<< organizer.getUsername() <<", what would you like to do:\n"
+		cout << "\n Hi, "<< organizer.getUsername() <<", what would you like to do (input the number for the action you would like to use):\n"
 		<< "1. Display Profile\n"
 		<< "2. Modify Password\n"
 		<< "3. Create Event\n"
@@ -108,7 +108,8 @@ void displayOrganizerMenu(Organizer& organizer){
 				// Find the Kth event, if k > LinkedBag size, 
 				//    return an error message that includes the size of the LinkedBag
 				int k;
-                cout << "Enter event index: ";
+				organizer.displayAllEvents();
+                cout << "Enter event index(only accepts a number listed): ";
                 cin >> k;
                 organizer.displayEventK(k);
 
@@ -121,7 +122,8 @@ void displayOrganizerMenu(Organizer& organizer){
 				// If index > LinkedBag size, 
 				//    return an error message that includes the size of the LinkedBag
 				int k;
-                cout << "Enter event index to modify: ";
+				organizer.displayAllEvents();
+                cout << "Enter event index to modify (only input a number): ";
                 cin >> k;
                 organizer.modifyEvent(k);
 				break;
@@ -131,8 +133,10 @@ void displayOrganizerMenu(Organizer& organizer){
 				// Find the event, then sell the tickets. 
 				// If index > LinkedBag size, 
 				//    return an error message that includes the size of the LinkedBag
+				
                 int k, quantity;
-                cout << "Enter event index: ";
+				organizer.displayAllEvents();
+                cout << "Enter event index (only input the number): ";
                 cin >> k;
                 cout << "Enter quantity to sell: ";
                 cin >> quantity;
@@ -148,6 +152,7 @@ void displayOrganizerMenu(Organizer& organizer){
 				// Find the event, then remove it from the list. 
 				// If index > LinkedBag size, 
 				//    return an error message that includes the size of the LinkedBag
+				organizer.displayAllEvents();
 				int k;
                 cout << "Enter event index to delete: ";
                 cin >> k;
@@ -175,7 +180,7 @@ int main(){
 	// With this implementation, the application will only have one organizer
 	EventTicket340 eventTicket340; 
 
-	cout << "\n Welcome to EventTicket340:" << endl;
+	cout << "\nWelcome to EventTicket340:" << endl;
 	// TO DO: Ask the organizer to enter their information 
 	//        Instantiate a new Organizer object
 
